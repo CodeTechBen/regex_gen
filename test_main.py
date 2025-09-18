@@ -21,6 +21,7 @@ def test_char_type(char, expected):
 ])
 def test_string_to_regex(string, expected):
     assert string_to_regex(string) == expected
+    
 
 def test_list_regex_patterns():
     strings = ["apple", "banana"]
