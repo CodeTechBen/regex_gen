@@ -36,7 +36,7 @@ def string_to_regex(s: str) -> str:
     pattern.append(f"{prev_type}{{{count}}}" if count > 1 else prev_type)
     return ''.join(pattern)
 
-def sliding_window_regex(strings):
+def list_regex_patterns(strings):
     """Generate regex for each string in list"""
     return [string_to_regex(s) for s in strings]
 
@@ -70,7 +70,7 @@ def merge_regex_patterns(patterns):
 
 if __name__ == "__main__":
     strings = ['apple', 'apricot', 'banana', 'blueberry', 'cherry', 'X99!!']
-    regexes = sliding_window_regex(strings)
+    regexes = list_regex_patterns(strings)
 
     for s, r in zip(strings, regexes):
         print(f"{s:10} -> {r}")
